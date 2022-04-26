@@ -5,7 +5,7 @@ import plotly.express as px
 
 # Read the airline data into pandas dataframe
 spacex_df = pd.read_csv("spacex_launch_dash.csv")
-spacex_df['Landing Outcome'] = spacex_df['class'].apply(lambda x: 'Failed Landing' if (x == 0) else 'Successful Landing')
+spacex_df['Landing Outcome'] = spacex_df['class'].apply(lambda x: 'Failed Landing' if (x != 0) else 'Successful Landing')
 max_payload = spacex_df['Payload Mass (kg)'].max()
 min_payload = spacex_df['Payload Mass (kg)'].min()
 
