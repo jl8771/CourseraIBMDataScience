@@ -94,11 +94,11 @@ def get_scatter_chart(entered_site, payload_range):
     if entered_site == 0:
         df_scatter = spacex_df.copy()
         title = 'Total launches for all sites'
-        fig = px.scatter(df_scatter[mask], x='Payload Mass (kg)', y='class', color='Booster Version Category', title=title)
+        fig = px.scatter(df_scatter[mask], x='Payload Mass (kg)', y='Landing Outcome', color='Booster Version Category', title=title)
     else:
         df_scatter = spacex_df[spacex_df['Launch Site'] == launchSites[entered_site]]
         title = 'Total launches for ' + launchSites[entered_site]
-        fig = px.scatter(df_scatter[mask], x='Payload Mass (kg)', y='class', color='Booster Version Category', title=title)
+        fig = px.scatter(df_scatter[mask], x='Payload Mass (kg)', y='Landing Outcome', color='Booster Version Category', title=title)
     return fig
 
 # Run the app
